@@ -11,17 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160324130657) do
+ActiveRecord::Schema.define(version: 20160326032353) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "name"
-    t.integer  "product_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.text     "description"
   end
-
-  add_index "brands", ["product_id"], name: "index_brands_on_product_id"
 
   create_table "customers", force: :cascade do |t|
     t.string   "name"
@@ -33,10 +30,10 @@ ActiveRecord::Schema.define(version: 20160324130657) do
     t.string   "title"
     t.decimal  "price"
     t.string   "stock"
-    t.integer  "brand_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.text     "description"
+    t.integer  "brand_id"
   end
 
   add_index "products", ["brand_id"], name: "index_products_on_brand_id"
