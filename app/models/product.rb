@@ -1,3 +1,3 @@
 class Product < ActiveRecord::Base
-  has_many :brands
+  has_one :brand
 end
