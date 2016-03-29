@@ -15,6 +15,7 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
+    @brands = Brand.order(:name)
   end
 
   # GET /products/1/edit
